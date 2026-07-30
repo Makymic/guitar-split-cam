@@ -11,271 +11,307 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBFBFD] text-slate-900 font-sans antialiased selection:bg-slate-900 selection:text-white">
-      {/* Background Subtle Grid */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `radial-gradient(#000 1px, transparent 1px)`,
-          backgroundSize: `24px 24px`
-        }}
-      />
-
-      {/* TOP ANNOUNCEMENT / TOP AD BANNER SLOT */}
-      <div className="bg-slate-100 border-b border-slate-200/80 text-center py-2 px-4 text-xs text-slate-600 relative z-20">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased">
+      
+      {/* TOP AD BANNER SLOT */}
+      <div className="bg-slate-100 border-b border-slate-200 text-center py-2 px-4 text-xs text-slate-600">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2">
-          {/* REPLACE THIS INNER DIV WITH YOUR AD CODE (e.g. Google AdSense Banner 728x90 or text ad) */}
-          <span className="font-semibold px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded text-[10px] uppercase tracking-wider">
+          <span className="font-semibold px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] uppercase tracking-wider">
             Sponsor
           </span>
-          <span>Check out top-rated guitar accessories & audio interfaces on Sale today.</span>
+          <span>Featured Gear: High-definition webcams & desk clamps optimized for multi-instrument streaming.</span>
         </div>
       </div>
 
-      {/* Header */}
-      <header className="border-b border-slate-200/60 bg-[#FBFBFD]/80 backdrop-blur-md sticky top-0 z-50">
+      {/* TOPBAR / HEADER (Blue Topbar with Title to Left) */}
+      <header className="bg-blue-700 text-white shadow-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-          <div className="flex items-center gap-3 font-semibold text-sm tracking-tight text-slate-900">
-            <div className="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-base shadow-sm">
-              🎸
+          
+          {/* Title / Logo Left-Aligned */}
+          <div className="flex items-center gap-3">
+            <span className="text-xl p-1 bg-blue-800 rounded-lg shadow-inner">🎹</span>
+            <div className="flex flex-col text-left">
+              <span className="font-extrabold text-base tracking-tight leading-none text-white">
+                Guitar & Instrument Split-Cam
+              </span>
+              <span className="text-[10px] text-blue-200 font-medium tracking-wide">
+                Multi-Instrument Dual-View Studio
+              </span>
             </div>
-            <span>Guitar Split-Cam</span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600">
-            <a href="#features" className="hover:text-slate-900 transition-colors">Features</a>
-            <a href="#how-it-works" className="hover:text-slate-900 transition-colors">How it Works</a>
-            <a href="#faq" className="hover:text-slate-900 transition-colors">FAQ</a>
+          {/* Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-blue-100">
+            <a href="#overview" className="hover:text-white transition-colors">Overview</a>
+            <a href="#instruments" className="hover:text-white transition-colors">Supported Instruments</a>
+            <a href="#features" className="hover:text-white transition-colors">Features</a>
+            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </nav>
 
+          {/* Action Buttons */}
           <div className="flex items-center gap-3">
             <a 
               href="https://github.com/Makymic/guitar-split-cam" 
               target="_blank" 
               rel="noreferrer"
-              className="text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors px-3 py-2"
+              className="text-xs font-medium text-blue-100 hover:text-white transition-colors px-3 py-2 hidden sm:block"
             >
               GitHub
             </a>
             <a
               href={DOWNLOAD_LINK}
-              className="text-xs font-semibold px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-sm"
+              className="text-xs font-semibold px-4 py-2 rounded-lg bg-white text-blue-700 hover:bg-blue-50 transition-all shadow-sm"
             >
-              Download App
+              Download Free
             </a>
           </div>
         </div>
       </header>
 
-      {/* Main Container */}
-      <main className="max-w-5xl mx-auto px-6 relative z-10">
+      {/* MAIN CONTENT AREA */}
+      <main className="max-w-5xl mx-auto px-6 py-12 relative z-10">
         
-        {/* HERO SECTION */}
-        <section className="pt-20 pb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200 mb-8">
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            Open Source & Built with Tauri v2
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-3xl mx-auto">
-            Dual hand tracking. <br />
-            Single webcam setup.
-          </h1>
-
-          <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto mb-10 font-normal leading-relaxed">
-            The lightweight desktop studio for guitarists. Split your fretting and picking hands into two clean dynamic frames with zero extra hardware.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
-            <a
-              href={DOWNLOAD_LINK}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 font-semibold text-white shadow-md transition-all text-sm flex items-center justify-center gap-2"
-            >
-              <span>Download for Desktop</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+        {/* HERO SECTION - PERSUASIVE & INFORMATIVE */}
+        <section id="overview" className="pt-4 pb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <button
-              onClick={handleCopyInstall}
-              className="w-full sm:w-auto px-5 py-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 font-mono text-xs text-slate-600 transition-all flex items-center justify-center gap-2 shadow-sm"
-            >
-              <span className="text-slate-400">$</span>
-              <span>git clone guitar-split-cam</span>
-              <span className="ml-2 text-slate-900 font-sans font-bold text-[11px]">
-                {copied ? "Copied!" : "Copy"}
+            {/* Left Persuasive Copy (Justified Text) */}
+            <div className="lg:col-span-7 text-justify">
+              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full mb-4">
+                100% Free & Open Source
               </span>
-            </button>
-          </div>
-
-          {/* Clean Interactive-Style Mockup Frame */}
-          <div className="rounded-2xl p-3 bg-white border border-slate-200 shadow-xl shadow-slate-200/50 max-w-4xl mx-auto">
-            <div className="bg-slate-950 rounded-xl overflow-hidden border border-slate-900">
-              {/* Window Controls bar */}
-              <div className="h-8 bg-slate-900 border-b border-slate-800 px-3 flex items-center justify-between text-slate-400">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-                </div>
-                <span className="text-[11px] font-mono text-slate-400">Guitar Split-Cam Studio</span>
-                <div className="w-10" />
-              </div>
               
-              {/* Viewport */}
-              <div className="aspect-[2/1] bg-slate-950 grid grid-cols-2 gap-1 p-1 relative">
-                <div className="bg-slate-900 rounded-l-lg border border-slate-800/80 flex flex-col items-center justify-center relative p-4">
-                  <span className="text-xs font-mono text-slate-400 mb-2">[LEFT FRAME - FRETTING]</span>
-                  <div className="w-12 h-12 rounded-full border border-dashed border-slate-700 flex items-center justify-center text-slate-500 text-xs">
-                    Hand
-                  </div>
-                  <span className="absolute bottom-3 left-3 text-[10px] font-mono px-2 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
-                    MediaPipe: Active
-                  </span>
-                </div>
+              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6 text-left">
+                Dual Hand Tracking. <br />
+                Single Webcam Setup.
+              </h1>
 
-                <div className="bg-slate-900 rounded-r-lg border border-slate-800/80 flex flex-col items-center justify-center relative p-4">
-                  <span className="text-xs font-mono text-slate-400 mb-2">[RIGHT FRAME - PICKING]</span>
-                  <div className="w-12 h-12 rounded-full border border-dashed border-slate-700 flex items-center justify-center text-slate-500 text-xs">
-                    Hand
-                  </div>
-                  <span className="absolute bottom-3 right-3 text-[10px] font-mono px-2 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
-                    Auto-Center: ON
-                  </span>
-                </div>
+              <p className="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed">
+                Capturing wide instrumental performances—whether fretting a guitar neck, spanning eighty-eight piano keys, or striking xylophone bars—usually requires multi-camera setups, complex OBS routing, or manual camera readjustments mid-lesson.
+              </p>
 
-                {/* Pitch Overlay Mock */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-slate-900/90 border border-slate-700 rounded-full text-slate-200 text-xs font-mono flex items-center gap-2 shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>TUNER: 82.4Hz (E2)</span>
+              <p className="text-sm sm:text-base text-slate-600 mb-8 leading-relaxed">
+                Instrument Split-Cam uses client-side computer vision to solve this framing problem. By automatically tracking left and right hand gestures via MediaPipe, the application dynamically crops and isolates two steady video feeds from a single camera—delivering clean split-screen monitoring for guitarists, pianists, xylophonists, and percussionists alike.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center gap-3 text-left">
+                <a
+                  href={DOWNLOAD_LINK}
+                  className="w-full sm:w-auto px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold text-white shadow-md transition-all text-sm flex items-center justify-center gap-2"
+                >
+                  <span>Download Desktop App</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+                
+                <button
+                  onClick={handleCopyInstall}
+                  className="w-full sm:w-auto px-4 py-3 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 font-mono text-xs text-slate-700 transition-all flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <span className="text-slate-400">$</span>
+                  <span>git clone guitar-split-cam</span>
+                  <span className="ml-1 text-blue-600 font-sans font-bold text-[10px]">
+                    {copied ? "Copied!" : "Copy"}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Right Interactive Mockup Frame */}
+            <div className="lg:col-span-5">
+              <div className="rounded-xl bg-slate-900 p-2 shadow-xl border border-slate-800">
+                <div className="h-7 bg-slate-800 rounded-t-md px-3 flex items-center justify-between">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">Live Multi-Cam HUD</span>
+                </div>
+                <div className="aspect-[4/3] bg-slate-950 grid grid-rows-2 gap-1 p-1">
+                  <div className="bg-slate-900 rounded border border-slate-800 flex items-center justify-center relative">
+                    <span className="text-xs font-mono text-blue-400">Left Hand / Bass Register</span>
+                    <span className="absolute bottom-2 left-2 text-[9px] font-mono px-1.5 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
+                      Tracked: Active
+                    </span>
+                  </div>
+                  <div className="bg-slate-900 rounded border border-slate-800 flex items-center justify-center relative">
+                    <span className="text-xs font-mono text-blue-400">Right Hand / Treble Register</span>
+                    <span className="absolute bottom-2 right-2 text-[9px] font-mono px-1.5 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
+                      Auto-Crop: ON
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 
-        {/* MIDDLE ADVERTISEMENT BANNER SLOT */}
-        <section className="my-12">
-          <div className="w-full min-h-[90px] rounded-xl border border-dashed border-slate-300 bg-slate-50/50 p-4 flex flex-col items-center justify-center text-center">
-            {/* REPLACE THIS WITH YOUR AD DISPLAY CODE (e.g., 728x90 Leaderboard or Responsive Unit) */}
+        {/* IN-FEED ADVERTISEMENT SLOT */}
+        <section className="my-8">
+          <div className="w-full min-h-[90px] rounded-xl border border-dashed border-slate-300 bg-white p-4 flex flex-col items-center justify-center text-center shadow-sm">
             <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-1">
-              Advertisement
+              Sponsored Advertisement
             </span>
             <p className="text-xs text-slate-500">
-              Sponsor slot available — Place responsive Google AdSense or Custom Partner Banners here.
+              Responsive Leaderboard Ad Unit Space (728x90) — Place Google AdSense / Affiliate Banners Here.
             </p>
+          </div>
+        </section>
+
+        {/* SUPPORTED INSTRUMENTS SECTION */}
+        <section id="instruments" className="py-12 border-t border-slate-200">
+          <div className="max-w-3xl mx-auto mb-10 text-justify">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-4 text-left">
+              Tailored for Diverse Musical Performance
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Most video software assumes a single static subject. Instrument Split-Cam treats both hands as independent subjects of interest, allowing musicians across various disciplines to showcase intricate techniques without secondary cameras.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-justify">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-2xl mb-2">🎸</div>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Guitar & Stringed</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Isolate complex chord voicings on the fretboard while simultaneously tracking picking, fingerstyle, or strumming hand placement.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-2xl mb-2">🎹</div>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Piano & Keyboards</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Simultaneously view bass and treble octaves on long keyboards without needing an overhead boom arm or secondary webcam lens.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="text-2xl mb-2">🥁</div>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Percussion & Xylophone</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Track mallets on wide tuned percussion instruments like xylophones, marimbas, or vibraphones with dynamic hand-centered cropping.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* FEATURES GRID */}
-        <section id="features" className="py-16 border-t border-slate-200">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-3">
-              Designed specifically for practice & instruction
+        <section id="features" className="py-12 border-t border-slate-200">
+          <div className="max-w-3xl mx-auto mb-10 text-justify">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-4 text-left">
+              Core Technical Capabilities
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Eliminate awkward camera angles and dual-webcam sync issues with automatic computer vision framing.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 font-bold mb-4 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-justify">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 01
               </div>
-              <h3 className="font-semibold text-slate-900 text-sm mb-2">Smart Camera Crop</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Auto Hand Isolation</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Uses MediaPipe hand tracking to continuously center both picking and fretting hands in dedicated viewports.
+                MediaPipe hand detection continually adjusts bounding boxes around both active hands to keep technique in focus.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 font-bold mb-4 text-sm">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 02
               </div>
-              <h3 className="font-semibold text-slate-900 text-sm mb-2">Real-Time Pitch HUD</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Audio Pitch HUD</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Integrated Web Audio autocorrelation engine detects frequencies and notes live right on top of your videofeed.
+                Built-in audio pitch estimation offers visual note and frequency feedback directly overlaid onto your live camera stream.
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-900 font-bold mb-4 text-sm">
+            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 03
               </div>
-              <h3 className="font-semibold text-slate-900 text-sm mb-2">Zero Extra Hardware</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Tauri Native Performance</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Designed to run natively via standard built-in webcams or USB capture devices with minimal memory footprint.
+                Built using Rust and Web API primitives for instantaneous startup times, minimal RAM footprint, and full offline execution.
               </p>
             </div>
           </div>
         </section>
 
-        {/* SIDE-BY-SIDE CONTENT + ADVERTISEMENT / FAQ SECTION */}
-        <section id="faq" className="py-16 border-t border-slate-200">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* FAQ (2 Columns) */}
-            <div className="lg:col-span-2 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight mb-6">
+        {/* SIDE-BY-SIDE FAQ & SIDEBAR AD SLOT */}
+        <section id="faq" className="py-12 border-t border-slate-200">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            {/* FAQ Area (Justified Text) */}
+            <div className="lg:col-span-8 text-justify">
+              <h2 className="text-xl font-bold text-slate-900 mb-6 text-left">
                 Frequently Asked Questions
-              </h3>
+              </h2>
 
               <div className="space-y-4">
-                <div className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm">
-                  <h4 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1">
-                    Do I need high-end webcams for hand tracking?
-                  </h4>
+                <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                  <h3 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1 text-left">
+                    Does this work for wide percussion or piano setups?
+                  </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    No. Standard 720p or 1080p webcams work seamlessly. MediaPipe runs locally on your CPU/GPU efficiently.
+                    Yes. The hand tracking logic detects key hand landmarks independently, making it suitable for wide keyboard instruments, xylophones, marimbas, and acoustic instruments where two hands operate apart.
                   </p>
                 </div>
 
-                <div className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm">
-                  <h4 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1">
-                    Is the software completely free?
-                  </h4>
+                <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                  <h3 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1 text-left">
+                    Do I need high-end hardware or a secondary webcam?
+                  </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Yes, it is released under the MIT open-source license with no subscriptions, ads in-app, or paid features.
+                    No. The software is engineered to work with standard laptop webcams or USB cameras. All tracking calculations occur locally through optimized client-side processing algorithms.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
+                  <h3 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1 text-left">
+                    Can I record my practice sessions directly?
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Yes. Built-in recording options allow you to record your practice sessions or lesson materials directly into standard web-compatible video formats without needing external software.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* SIDEBAR ADVERTISEMENT SLOT */}
-            <div className="lg:col-span-1">
-              <div className="h-full min-h-[250px] p-5 rounded-xl bg-slate-100/70 border border-dashed border-slate-300 flex flex-col items-center justify-center text-center">
-                {/* REPLACE THIS WITH YOUR SIDEBAR AD UNIT (e.g., 300x250 Medium Rectangle) */}
+            {/* Sidebar Ad Unit (300x250 Box) */}
+            <div className="lg:col-span-4">
+              <div className="h-full min-h-[220px] p-4 bg-slate-100 rounded-xl border border-dashed border-slate-300 flex flex-col items-center justify-center text-center">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mb-2">
-                  Sidebar Sponsor
+                  Sidebar Sponsor Slot
                 </span>
-                <p className="text-xs text-slate-500 mb-4">
-                  300x250 Ad Display Unit Location
-                </p>
-                <div className="w-full h-32 rounded bg-slate-200/60 border border-slate-300/60 flex items-center justify-center text-[11px] text-slate-400 font-mono">
-                  Ad Unit Placeholder
+                <div className="w-full h-36 bg-slate-200 rounded border border-slate-300 flex items-center justify-center text-xs text-slate-500 font-mono">
+                  300x250 Ad Display
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 py-10 bg-white text-xs text-slate-500 relative z-10">
+      {/* FOOTER */}
+      <footer className="border-t border-slate-200 bg-white py-8 text-xs text-slate-600">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Guitar Split-Cam. Open Source Software.</p>
+          <p>© {new Date().getFullYear()} Instrument Split-Cam. Released under the open-source MIT License.</p>
           <div className="flex gap-6">
-            <a href="https://github.com/Makymic/guitar-split-cam" target="_blank" rel="noreferrer" className="hover:text-slate-900">
+            <a href="https://github.com/Makymic/guitar-split-cam" target="_blank" rel="noreferrer" className="hover:text-blue-700">
               GitHub Repository
             </a>
-            <a href={DOWNLOAD_LINK} className="hover:text-slate-900">
+            <a href={DOWNLOAD_LINK} className="hover:text-blue-700">
               Releases
             </a>
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
