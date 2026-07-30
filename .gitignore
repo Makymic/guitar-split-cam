@@ -1,0 +1,14 @@
+# Dependencies (installed via npm)
+node_modules/
+
+# Frontend build outputs
+dist/
+build/
+
+# Tauri/Rust compiled binaries and temp files
+src-tauri/target/
+
+# System & Environment files
+.env
+.DS_Store
+Thumbs.db
