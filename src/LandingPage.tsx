@@ -19,7 +19,7 @@ export default function LandingPage() {
           <span className="font-semibold px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[10px] uppercase tracking-wider">
             Sponsor
           </span>
-          <span>Featured Gear: High-definition webcams & desk clamps optimized for multi-instrument streaming.</span>
+          <span>Featured Gear: High-definition webcams & desk clamps optimized for guitar streaming.</span>
         </div>
       </div>
 
@@ -29,13 +29,13 @@ export default function LandingPage() {
           
           {/* Title / Logo Left-Aligned */}
           <div className="flex items-center gap-3">
-            <span className="text-xl p-1 bg-blue-800 rounded-lg shadow-inner">🎹</span>
+            <span className="text-xl p-1 bg-blue-800 rounded-lg shadow-inner">🎸</span>
             <div className="flex flex-col text-left">
               <span className="font-extrabold text-base tracking-tight leading-none text-white">
-                Guitar & Instrument Split-Cam
+                Guitar Split-Cam
               </span>
               <span className="text-[10px] text-blue-200 font-medium tracking-wide">
-                Multi-Instrument Dual-View Studio
+                Dual-View Desktop Studio
               </span>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function LandingPage() {
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-blue-100">
             <a href="#overview" className="hover:text-white transition-colors">Overview</a>
-            <a href="#instruments" className="hover:text-white transition-colors">Supported Instruments</a>
+            <a href="#benefits" className="hover:text-white transition-colors">Why Split-Cam?</a>
             <a href="#features" className="hover:text-white transition-colors">Features</a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </nav>
@@ -87,11 +87,11 @@ export default function LandingPage() {
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed">
-                Capturing wide instrumental performances—whether fretting a guitar neck, spanning eighty-eight piano keys, or striking xylophone bars—usually requires multi-camera setups, complex OBS routing, or manual camera readjustments mid-lesson.
+                Capturing both the fretting fretboard and the picking technique usually requires two expensive webcams, complex OBS routing, or manual camera readjustment mid-lesson. Guitar Split-Cam solves this framing problem using real-time computer vision.
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 mb-8 leading-relaxed">
-                Instrument Split-Cam uses client-side computer vision to solve this framing problem. By automatically tracking left and right hand gestures via MediaPipe, the application dynamically crops and isolates two steady video feeds from a single camera—delivering clean split-screen monitoring for guitarists, pianists, xylophonists, and percussionists alike.
+                By automatically detecting your hands via MediaPipe, the application dynamically crops and isolates two steady video streams out of a single camera feed—delivering a professional split-screen view without extra hardware.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-3 text-left">
@@ -127,17 +127,17 @@ export default function LandingPage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400">Live Multi-Cam HUD</span>
+                  <span className="text-[10px] font-mono text-slate-400">Live Preview HUD</span>
                 </div>
                 <div className="aspect-[4/3] bg-slate-950 grid grid-rows-2 gap-1 p-1">
                   <div className="bg-slate-900 rounded border border-slate-800 flex items-center justify-center relative">
-                    <span className="text-xs font-mono text-blue-400">Left Hand / Bass Register</span>
+                    <span className="text-xs font-mono text-blue-400">Fretting Hand Stream</span>
                     <span className="absolute bottom-2 left-2 text-[9px] font-mono px-1.5 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
                       Tracked: Active
                     </span>
                   </div>
                   <div className="bg-slate-900 rounded border border-slate-800 flex items-center justify-center relative">
-                    <span className="text-xs font-mono text-blue-400">Right Hand / Treble Register</span>
+                    <span className="text-xs font-mono text-blue-400">Picking Hand Stream</span>
                     <span className="absolute bottom-2 right-2 text-[9px] font-mono px-1.5 py-0.5 bg-slate-950/80 text-emerald-400 border border-slate-800 rounded">
                       Auto-Crop: ON
                     </span>
@@ -161,60 +161,29 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* SUPPORTED INSTRUMENTS SECTION */}
-        <section id="instruments" className="py-12 border-t border-slate-200">
+        {/* WHY SPLIT-CAM? INFORMATIVE COMPARISON (Justified Text) */}
+        <section id="benefits" className="py-12 border-t border-slate-200">
           <div className="max-w-3xl mx-auto mb-10 text-justify">
             <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-4 text-left">
-              Tailored for Diverse Musical Performance
+              Built for Teachers, Students, and Content Creators
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
-              Most video software assumes a single static subject. Instrument Split-Cam treats both hands as independent subjects of interest, allowing musicians across various disciplines to showcase intricate techniques without secondary cameras.
+              Standard webcam recording forces a broad framing angle that renders hand detail indistinguishable. Students struggle to see exact fretting positions, and instructors spend valuable lesson time re-angling their webcams.
+            </p>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Guitar Split-Cam runs MediaPipe hand tracking locally on your computer to continuously lock onto both hands. As you move along the fretboard, the bounding boxes dynamically follow your movement without losing frame stability.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-justify">
-            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl mb-2">🎸</div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Guitar & Stringed</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Isolate complex chord voicings on the fretboard while simultaneously tracking picking, fingerstyle, or strumming hand placement.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl mb-2">🎹</div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Piano & Keyboards</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Simultaneously view bass and treble octaves on long keyboards without needing an overhead boom arm or secondary webcam lens.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
-              <div className="text-2xl mb-2">🥁</div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Percussion & Xylophone</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Track mallets on wide tuned percussion instruments like xylophones, marimbas, or vibraphones with dynamic hand-centered cropping.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* FEATURES GRID */}
-        <section id="features" className="py-12 border-t border-slate-200">
-          <div className="max-w-3xl mx-auto mb-10 text-justify">
-            <h2 className="text-2xl font-bold text-slate-900 tracking-tight mb-4 text-left">
-              Core Technical Capabilities
-            </h2>
-          </div>
-
+          {/* 3 Column Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-justify">
             <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
               <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 01
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Auto Hand Isolation</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Auto Hand Crop</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                MediaPipe hand detection continually adjusts bounding boxes around both active hands to keep technique in focus.
+                Automatically isolates and crops fretting and picking areas from a single wide camera shot in real time.
               </p>
             </div>
 
@@ -222,9 +191,9 @@ export default function LandingPage() {
               <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 02
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Audio Pitch HUD</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Integrated Pitch HUD</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Built-in audio pitch estimation offers visual note and frequency feedback directly overlaid onto your live camera stream.
+                Built-in audio pitch detection provides an on-screen visual frequency feedback overlay for instant tuning verification.
               </p>
             </div>
 
@@ -232,9 +201,9 @@ export default function LandingPage() {
               <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xs mb-3">
                 03
               </div>
-              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Tauri Native Performance</h3>
+              <h3 className="font-bold text-sm text-slate-900 mb-2 text-left">Lightweight Desktop App</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Built using Rust and Web API primitives for instantaneous startup times, minimal RAM footprint, and full offline execution.
+                Powered by Tauri v2 for ultra-fast startup times, minimal system memory consumption, and complete offline capability.
               </p>
             </div>
           </div>
@@ -251,15 +220,6 @@ export default function LandingPage() {
               </h2>
 
               <div className="space-y-4">
-                <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
-                  <h3 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1 text-left">
-                    Does this work for wide percussion or piano setups?
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Yes. The hand tracking logic detects key hand landmarks independently, making it suitable for wide keyboard instruments, xylophones, marimbas, and acoustic instruments where two hands operate apart.
-                  </p>
-                </div>
-
                 <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
                   <h3 className="font-semibold text-xs sm:text-sm text-slate-900 mb-1 text-left">
                     Do I need high-end hardware or a secondary webcam?
@@ -300,7 +260,7 @@ export default function LandingPage() {
       {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-white py-8 text-xs text-slate-600">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Instrument Split-Cam. Released under the open-source MIT License.</p>
+          <p>© {new Date().getFullYear()} Guitar Split-Cam. Released under the open-source MIT License.</p>
           <div className="flex gap-6">
             <a href="https://github.com/Makymic/guitar-split-cam" target="_blank" rel="noreferrer" className="hover:text-blue-700">
               GitHub Repository
